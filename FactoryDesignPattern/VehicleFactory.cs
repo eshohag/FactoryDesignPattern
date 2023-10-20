@@ -8,16 +8,16 @@ namespace FactoryDesignPattern
 {
     public class VehicleFactory
     {
-        public IVehicle GetVehicle(string type)
+        public IVehicle GetVehicle(int typeId)
         {
             IVehicle vehicle = null;
 
-            switch (type.ToLower())
+            switch (typeId)
             {
-                case "bike":
+                case (int)VehicleTypeEnum.Bike:
                     vehicle = new Bike();
                     break;
-                case "car":
+                case (int)VehicleTypeEnum.Car:
                     vehicle = new Car();
                     break;
                 default:
